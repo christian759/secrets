@@ -8,16 +8,7 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-    <!-- <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello World!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" android:id="@+id/textView"/>
-
-    <ImageView
+    <!-- <ImageView
             android:id="@+id/my_ImageView"
             android:layout_height="93dp"
             android:layout_width="147dp"
@@ -35,7 +26,7 @@
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintVertical_bias="0.166"/>
-            -->
+    -->
 
     <androidx.cardview.widget.CardView
             android:id="@+id/topCardView"
@@ -49,6 +40,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/bottomCardView"
             app:layout_constraintVertical_bias="0.0"
+            app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="20dp"
             app:cardElevation="5dp"/>
 
@@ -65,7 +57,7 @@
             app:cardElevation="20dp"
             app:cardCornerRadius="20dp"
             app:contentPadding="5dp"
-            app:cardBackgroundColor="#FFFFFFFF">
+            app:cardBackgroundColor="@color/white">
 
         <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -75,29 +67,29 @@
             <Button
                     android:text="Hide Image"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="54dp"
                     android:id="@+id/button"
                     app:cornerRadius="14dp"
                     android:layout_margin="5dp"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/button2"/>
+                    app:layout_constraintEnd_toStartOf="@+id/button2" tools:ignore="VisualLintButtonSize"/>
             <Button
                     android:text="Hide Text"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="54dp"
                     android:layout_margin="5dp"
                     android:id="@+id/button2"
                     app:cornerRadius="14dp"
                     app:layout_constraintStart_toEndOf="@id/button"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/button3"/>
+                    app:layout_constraintEnd_toStartOf="@id/button3" tools:ignore="VisualLintButtonSize"/>
             <Button
                     android:text="Reveal Image"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="54dp"
                     android:id="@+id/button3"
                     android:layout_margin="5dp"
                     app:cornerRadius="14.dp"
@@ -105,18 +97,18 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/button4"
-            />
+                    tools:ignore="VisualLintButtonSize"/>
             <Button
                     android:text="Reveal Text"
                     android:id="@+id/button4"
                     app:cornerRadius="14.dp"
                     android:layout_width="0dp"
                     android:layout_margin="5dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="54dp"
                     app:layout_constraintStart_toEndOf="@id/button3"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintEnd_toEndOf="parent" tools:ignore="VisualLintButtonSize"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
