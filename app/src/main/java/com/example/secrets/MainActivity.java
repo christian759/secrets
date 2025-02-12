@@ -17,8 +17,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import java.io.IOException;
 import java.io.InputStream;
+
 
 public class MainActivity extends AppCompatActivity {
     ImageView imageView;
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Button openImageButton = findViewById(R.id.openImage);
-        imageView = findViewById(R.id.my_ImageView);
+        imageView = findViewById(R.id.ImageViewer);
 
         pickImageLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
                 result -> {
