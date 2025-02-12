@@ -17,7 +17,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -44,41 +43,14 @@ public class MainActivity extends AppCompatActivity {
                     if (result.getResultCode() == RESULT_OK && result.getData() != null) {
                         Intent data = result.getData();
                         Uri uri = data.getData();
-
                         if (uri != null) {
                             try {
                                 InputStream inputStream = getContentResolver().openInputStream(uri);
-                                if (inputStream != null) {
-                                    Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
-                                    if (bitmap != null) {
-                                        imageView.setImageBitmap(bitmap);
-                                    } else {
-                                        Toast.makeText(this, "Error decoding image", Toast.LENGTH_SHORT).show();
-                                        Log.e("MainActivity", "Error decoding image from stream"); // Log error
-                                    }
-                                    inputStream.close();
-                                } else {
-                                    Toast.makeText(this, "Error opening input stream", Toast.LENGTH_SHORT).show();
-                                    Log.e("MainActivity", "Error: InputStream is null");
-                                }
-
-
-                            } catch (IOException e) {
-                                Log.e("MainActivity", "IOException: " + e.getMessage(), e); // Log full exception
-                                Toast.makeText(this, "Error loading image: " + e.getMessage(), Toast.LENGTH_SHORT).show(); //Show the cause to the user
-                            } catch (SecurityException e){
-                                Log.e("MainActivity", "SecurityException: " + e.getMessage(), e);
-                                Toast.makeText(this, "Security Exception: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                            }
-                        } else {
-                            Toast.makeText(this, "No image URI received", Toast.LENGTH_SHORT).show();
-                            Log.w("MainActivity", "Warning: URI is null");
-                        }
-                    } else {
-                        Log.d("MainActivity", "Activity result not OK or data is null");
-                    }
-                });
-
+                                Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+                                imageView.setImageBitmap(bitmap);
+                                inputStream.close();
+                            } catch (Exception e) {Toast.makeText(this, "Error loading image: " + e.getMessage(), Toast.LENGTH_SHORT).show();}
+                        } else {Toast.makeText(this, "No image URI received", Toast.LENGTH_SHORT).show();}}});
         openImageButton.setOnClickListener(view -> openFileChooser());
     }
 
