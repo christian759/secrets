@@ -3,4 +3,8 @@
     <string name="check_image">check image</string>
     <string name="opne">Button</string>
     <string name="open">open\n</string>
+    <string name="text_finder">text finder</string>
+    <string name="text_hider">text hider</string>
+    <string name="image_finder">image finder</string>
+    <string name="image_hider">image hider</string>
 </resources>

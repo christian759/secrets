@@ -5,6 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/main"
         android:layout_width="match_parent"
+        android:background="#65FFFFFF"
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
@@ -13,7 +14,6 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintHeight_percent="0.8"
-            android:layout_marginTop="7dp"
             android:layout_marginHorizontal="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -54,7 +54,7 @@
 
 
     <androidx.cardview.widget.CardView
-            android:layout_width="410dp"
+            android:layout_width="350dp"
             android:layout_height="0dp"
             app:layout_constraintHeight_percent="0.1"
             android:layout_marginHorizontal="20dp"
@@ -86,7 +86,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/button2"
                     tools:ignore="VisualLintButtonSize"
-                    android:src="@drawable/hide"/>
+                    android:src="@drawable/hideimage"/>
 
             <ImageButton
                     android:layout_width="65dp"
@@ -95,7 +95,7 @@
                     android:id="@+id/button2"
                     android:background="@drawable/circular_button"
                     android:contentDescription="@string/image_finder"
-                    android:src="@drawable/hide"
+                    android:src="@drawable/searchimage"
                     app:cornerRadius="10dp"
                     app:layout_constraintStart_toEndOf="@id/button"
                     app:layout_constraintTop_toTopOf="parent"
@@ -108,7 +108,7 @@
                     android:layout_margin="5dp"
                     android:id="@+id/button3"
                     android:background="@drawable/circular_button"
-                    android:src="@drawable/hide"
+                    android:src="@drawable/wow"
                     app:cornerRadius="10dp"
                     android:contentDescription="@string/text_hider"
                     app:layout_constraintStart_toEndOf="@id/button2"
@@ -124,7 +124,7 @@
                     android:id="@+id/button4"
                     android:contentDescription="@string/text_finder"
                     android:background="@drawable/circular_button"
-                    android:src="@drawable/hide"
+                    android:src="@drawable/ext"
                     app:cornerRadius="10dp"
                     app:layout_constraintStart_toEndOf="@id/button3"
                     app:layout_constraintTop_toTopOf="parent"
