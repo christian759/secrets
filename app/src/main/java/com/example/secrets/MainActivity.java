@@ -7,7 +7,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
@@ -35,8 +37,53 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        Button openImageButton = findViewById(R.id.openImage);
-        imageView = findViewById(R.id.ImageViewer);
+        ImageButton button1 = findViewById(R.id.button);
+        ImageButton button2 = findViewById(R.id.button2);
+        ImageButton button3 = findViewById(R.id.button3);
+        ImageButton button4 = findViewById(R.id.button4);
+
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ContentFragment1 contentFragment1 = new ContentFragment1();
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.content_frame, contentFragment1)
+                        .commit();
+            }
+        });
+
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ContentFragment2 contentFragment2 = new ContentFragment2();
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.content_frame, contentFragment2)
+                        .commit();
+            }
+        });
+
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ContentFragment3 contentFragment3 = new ContentFragment3();
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.content_frame, contentFragment3)
+                        .commit();
+            }
+        });
+
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ContentFragment4 contentFragment4 = new ContentFragment4();
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.content_frame, contentFragment4)
+                        .commit();
+            }
+        });
+
+        //Button openImageButton = findViewById(R.id.openImage);
+        //imageView = findViewById(R.id.ImageViewer);
 
         pickImageLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
                 result -> {
@@ -52,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
                             } catch (Exception e) {Toast.makeText(this, "Error loading image: " + e.getMessage(), Toast.LENGTH_SHORT).show();}
                         } else {Toast.makeText(this, "No image URI received", Toast.LENGTH_SHORT).show();}}});
 
-        openImageButton.setOnClickListener(view -> openFileChooser());
+        //openImageButton.setOnClickListener(view -> openFileChooser());
     }
 
     protected void openFileChooser() {
