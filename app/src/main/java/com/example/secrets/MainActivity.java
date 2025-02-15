@@ -51,13 +51,13 @@ public class MainActivity extends AppCompatActivity {
                                 inputStream.close();
                             } catch (Exception e) {Toast.makeText(this, "Error loading image: " + e.getMessage(), Toast.LENGTH_SHORT).show();}
                         } else {Toast.makeText(this, "No image URI received", Toast.LENGTH_SHORT).show();}}});
+
         openImageButton.setOnClickListener(view -> openFileChooser());
     }
 
     protected void openFileChooser() {
         Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
-        intent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*"); // Corrected line
-        //intent.setType("image/*");  //Avoid
+        intent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*");
         intent.addCategory(Intent.CATEGORY_OPENABLE); // Make sure only "openable" files are shown
 
         try {

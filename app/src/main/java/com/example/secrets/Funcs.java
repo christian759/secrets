@@ -53,7 +53,7 @@ public class Funcs {
         return stegoImage;
     }
 
-    public static void hide_text(Bitmap cover_image, String message) {
+    public static Bitmap hide_text(Bitmap cover_image, String message) {
         int width = cover_image.getWidth();
         int height = cover_image.getHeight();
         int totalPixels = width * height;
@@ -89,6 +89,8 @@ public class Funcs {
                 }
             }
         }
+
+        return cover_image;
     }
 
     public static Bitmap reveal_image(Bitmap stego_image, int secretWidth, int secretHeight) {
