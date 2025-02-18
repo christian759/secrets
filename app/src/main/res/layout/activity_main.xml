@@ -21,7 +21,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/bottomCardView"
             app:layout_constraintVertical_bias="0.0"
-            app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="20dp"
             app:cardElevation="5dp" app:layout_constraintHorizontal_bias="0.4" >
 
@@ -43,6 +42,7 @@
             android:id="@+id/bottomCardView"
             app:layout_constraintBottom_toBottomOf="parent"
             app:cardElevation="20dp"
+            app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="20dp"
             app:contentPadding="5dp">
 
