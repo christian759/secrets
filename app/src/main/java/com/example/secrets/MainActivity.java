@@ -1,7 +1,7 @@
 package com.example.secrets;
 
-import android.content.Intent;
 import android.graphics.Bitmap;
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
@@ -99,7 +99,5 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "No app found to handle file selection!", Toast.LENGTH_SHORT).show();
             Log.e("MainActivity", "No Activity found to handle Intent", e); //Log the exception
         }
-
-
     }
 }

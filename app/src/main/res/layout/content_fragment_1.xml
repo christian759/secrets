@@ -59,7 +59,7 @@
     <ImageView
             android:layout_width="95dp"
             android:layout_height="55dp"
-            android:id="@+id/imageView"
+            android:id="@+id/imageView1"
             android:contentDescription="@string/cover_image_content"
             app:layout_constraintTop_toBottomOf="@+id/frag1_button1"
             app:layout_constraintEnd_toEndOf="parent"
