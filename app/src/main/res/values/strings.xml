@@ -7,4 +7,5 @@
     <string name="text_hider">text hider</string>
     <string name="image_finder">image finder</string>
     <string name="image_hider">image hider</string>
+    <string name="cover_text">Choose and upload the image that will conceal the hidden content</string>
 </resources>
