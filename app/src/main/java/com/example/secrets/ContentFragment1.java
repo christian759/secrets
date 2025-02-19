@@ -29,6 +29,9 @@ public class ContentFragment1 extends Fragment {
     public ActivityResultLauncher<Intent> pickImageLauncher11;
     public ImageView imageView11;
 
+    public ActivityResultLauncher<Intent> pickImageLauncher12;
+    public ImageView imageView12;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -67,6 +70,42 @@ public class ContentFragment1 extends Fragment {
 
             try {
                 pickImageLauncher11.launch(intent);
+            } catch (ActivityNotFoundException e) {
+                Toast.makeText(requireContext(), "No app found to handle file selection!", Toast.LENGTH_SHORT).show();
+                Log.e("MainActivity", "No Activity found to handle Intent", e); //Log the exception
+            }
+        });
+
+        imageView12 = view.findViewById(R.id.imageView2);
+        Button button2 = view.findViewById(R.id.frag1_button2);
+
+        pickImageLauncher12 = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if (result.getResultCode() == AppCompatActivity.RESULT_OK && result.getData() != null) {
+                        Intent data = result.getData();
+                        Uri uri = data.getData();
+                        if (uri != null) {
+                            try {
+                                InputStream inputStream = requireActivity().getContentResolver().openInputStream(uri);
+                                Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+                                imageView12.setImageBitmap(bitmap);
+                                inputStream.close();
+                            } catch (Exception e) {
+                                Toast.makeText(requireContext(), "Error loading image: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        } else {
+                            Toast.makeText(requireContext(), "No image URI received", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
+        button2.setOnClickListener(view1 -> {
+            Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+            intent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*");
+            intent.addCategory(Intent.CATEGORY_OPENABLE); // Make sure only "openable" files are shown
+
+            try {
+                pickImageLauncher12.launch(intent);
             } catch (ActivityNotFoundException e) {
                 Toast.makeText(requireContext(), "No app found to handle file selection!", Toast.LENGTH_SHORT).show();
                 Log.e("MainActivity", "No Activity found to handle Intent", e); //Log the exception
