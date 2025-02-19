@@ -27,7 +27,7 @@
     <TextView
             android:layout_marginVertical="10dp"
             android:text="@string/cover_text"
-            android:layout_width="350dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:id="@+id/frag1_cover"
             android:typeface="monospace"
@@ -71,7 +71,7 @@
     <TextView
             android:layout_marginVertical="10dp"
             android:text="@string/secret_text"
-            android:layout_width="350dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:id="@+id/frag1_secret"
             android:typeface="monospace"
@@ -80,8 +80,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:textSize="16sp"
-            android:layout_marginTop="12dp"
-            app:layout_constraintHorizontal_bias="0.097"/>
+            android:layout_marginTop="8dp"
+            app:layout_constraintHorizontal_bias="0.0"/>
+
     <Button
             android:text="@string/upload_image"
             android:layout_marginVertical="10dp"
