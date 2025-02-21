@@ -41,18 +41,5 @@ public class MainActivity extends AppCompatActivity {
                     .commit();
         });
 
-        button3.setOnClickListener(v -> {
-            ContentFragment3 contentFragment3 = new ContentFragment3();
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.content_frame, contentFragment3)
-                    .commit();
-        });
-
-        button4.setOnClickListener(v -> {
-            ContentFragment4 contentFragment4 = new ContentFragment4();
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.content_frame, contentFragment4)
-                    .commit();
-        });
     }
 }
