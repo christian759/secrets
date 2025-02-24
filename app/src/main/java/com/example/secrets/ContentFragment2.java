@@ -1,5 +1,6 @@
 package com.example.secrets;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.net.Uri;
@@ -10,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
@@ -23,9 +23,11 @@ import java.nio.ByteBuffer;
 
 import static android.app.Activity.RESULT_OK;
 
+/** @noinspection ALL*/
 public class ContentFragment2 extends Fragment {
     private Uri imageUri; // URI of the selected image
     private TextView textViewStatus;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -66,6 +68,7 @@ public class ContentFragment2 extends Fragment {
         return view;
     }
 
+    @SuppressLint("SetTextI18n")
     private void revealHiddenContent(Uri imageUri) {
         try {
             InputStream inputStream = requireContext().getContentResolver().openInputStream(imageUri);
@@ -103,7 +106,7 @@ public class ContentFragment2 extends Fragment {
             String filename = "hidden_file_" + System.currentTimeMillis(); // Base filename
 
             // For demonstration purposes, let's assume we want to save it as .img by default.
-            String extension = ".img"; // Change this based on your needs or user selection
+            String extension = ".pdf"; // Change this based on your needs or user selection
 
             filename += extension; // Append extension to filename
 

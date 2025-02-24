@@ -1,6 +1,5 @@
 package com.example.secrets;
 
-import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -31,7 +30,6 @@ public class ContentFragment1 extends Fragment {
     private Uri imageUri;
     private Uri fileUri;
 
-    @SuppressLint("WrongThread")
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
